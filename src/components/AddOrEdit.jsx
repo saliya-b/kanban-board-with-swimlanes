@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const AddOrEdit = ({ value, changeHandler, okHandler, cancelHandler }) => {
   return (
@@ -17,6 +18,13 @@ const AddOrEdit = ({ value, changeHandler, okHandler, cancelHandler }) => {
       </button>
     </div>
   );
+};
+
+AddOrEdit.propTypes = {
+  value: PropTypes.string.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+  okHandler: PropTypes.func.isRequired,
+  cancelHandler: PropTypes.func.isRequired,
 };
 
 export default AddOrEdit;

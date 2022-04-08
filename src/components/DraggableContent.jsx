@@ -3,6 +3,7 @@ import { Draggable } from "react-beautiful-dnd";
 import { BiEdit } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
 import MainContext from "../context/MainContext";
+import PropTypes from "prop-types";
 import AddOrEdit from "./AddOrEdit";
 
 const DraggableContent = ({
@@ -102,6 +103,15 @@ const DraggableContent = ({
       )}
     </Draggable>
   );
+};
+
+DraggableContent.propTypes = {
+  item: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  colID: PropTypes.string.isRequired,
+  isUpdate: PropTypes.bool.isRequired,
+  setIsUpdate: PropTypes.func.isRequired,
+  isAdd: PropTypes.bool.isRequired,
 };
 
 export default DraggableContent;
